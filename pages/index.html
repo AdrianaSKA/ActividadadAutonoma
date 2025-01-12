@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <title>Home</title>
+</head>
+<body>
+    <nav id="barraNavegar">
+        <ul>
+            <li><a href="#que">¿Qué es el DOM?</a></li>
+            <li><a href="#objeto">El Objeto document</a></li>
+            <li><a href="#estructura">Estructura del DOM</a></li>
+            <li><a href="#metodos">Métodos para recorrer el DOM</a></li>
+            <li><a href="#acceso">Acceso y Modificación</a></li>
+        </ul>
+    </nav>
+
+    <header id="cabecera">
+        <h1>Información para la Página Web sobre el Document Object Model (DOM)</h1>
+    </header>
+
+    <section id="que">
+        <h2>¿Qué es el DOM?</h2>
+        <p>
+            El Document Object Model (DOM) es una interfaz que permite representar documentos HTML y XML como una estructura jerárquica en forma de árbol. Gracias al DOM, los desarrolladores pueden acceder, manipular y modificar dinámicamente el contenido, la estructura y el estilo de una página web, haciendo posible la creación de sitios interactivos y dinámicos.
+        </p>
+        <button onclick="irAlInicio()">Volver al inicio</button>
+    </section>
+
+    <section id="objeto">
+        <h2>El Objeto document</h2>
+        <p>
+            El objeto <code>document</code> es el núcleo del DOM del lado del cliente. Proporciona acceso a los elementos de una página web a través de propiedades y métodos específicos.
+        </p>
+
+        <h3>Propiedades principales del objeto document:</h3>
+        <ul>
+            <li><code>document.body</code>: Devuelve el elemento <code>body</code> del documento.</li>
+            <li><code>document.title</code>: Retorna el título de la página web.</li>
+            <li><code>document.images</code>: Es un arreglo que contiene todas las imágenes de la página.</li>
+            <li><code>document.bgColor</code>: Permite definir o modificar el color de fondo del documento. El color puede indicarse con nombres en inglés (<code>"red"</code>, <code>"green"</code>) o valores hexadecimales (<code>#FFFFFF</code> para blanco).</li>
+        </ul>
+
+        <h3>Métodos comunes del objeto document:</h3>
+        <ul>
+            <li><code>open()</code>: Abre el documento.</li>
+            <li><code>close()</code>: Cierra el documento.</li>
+            <li><code>write()</code> y <code>writeln()</code>: Escriben expresiones HTML en el documento.</li>
+        </ul>
+
+        <button onclick="irAlInicio()">Volver al inicio</button>
+    </section>
+
+    <section id="estructura">
+        <h2>Estructura del DOM: Nodos y Relaciones</h2>
+        <h3>El DOM está compuesto por nodos que representan los diferentes elementos del documento:</h3>
+        <ul>
+            <li><strong>Element:</strong> Nodos que corresponden a etiquetas HTML como <code>body</code>, <code>div</code> o <code>h1</code>.</li>
+            <li><strong>Text:</strong> Nodos que contienen el texto dentro de un elemento HTML.</li>
+        </ul>
+
+        <h3>Relaciones entre nodos:</h3>
+        <ul>
+            <li><strong>Padre:</strong> Nodo superior inmediato.</li>
+            <li><strong>Hijos:</strong> Nodos contenidos dentro de un nodo padre.</li>
+            <li><strong>Hermanos:</strong> Nodos en el mismo nivel jerárquico.</li>
+        </ul>
+        <p>
+            <strong>Ejemplo de relaciones en el DOM:</strong> En una estructura como:
+        </p>
+        <pre>&lt;ul&gt;
+    &lt;li id="miLI"&gt;Coffee&lt;/li&gt;
+    &lt;li&gt;Tea&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+        <button onclick="irAlInicio()">Volver al inicio</button>
+    </section>
+
+    <section id="metodos">
+        <h2>Métodos para recorrer el DOM</h2>
+        <p>
+            El DOM proporciona métodos para navegar entre los nodos de un documento:
+        </p>
+        <ul>
+            <li><code>parentNode</code>: Accede al nodo padre.</li>
+            <li><code>childNodes</code>: Devuelve un arreglo con los nodos hijos.</li>
+            <li><code>firstChild</code>: Accede al primer nodo hijo.</li>
+            <li><code>lastChild</code>: Accede al último nodo hijo.</li>
+            <li><code>previousSibling</code>: Navega al nodo hermano previo.</li>
+            <li><code>nextSibling</code>: Navega al nodo hermano siguiente.</li>
+        </ul>
+        <p>
+            <strong>Ejemplo:</strong> Si tenemos el siguiente código HTML:
+        </p>
+        <pre>&lt;ul&gt;
+    &lt;li id="miLI"&gt;Coffee&lt;/li&gt;
+    &lt;li&gt;Tea&lt;/li&gt;
+&lt;/ul&gt;
+        </pre>
+
+        <button onclick="irAlInicio()">Volver al inicio</button>
+    </section>
+
+    <section id="acceso">
+        <h2>Acceso y Modificación de Elementos HTML</h2>
+        <h3>Acceso a elementos:</h3>
+        <ul>
+            <li><code>getElementById()</code>: Selecciona un elemento utilizando su atributo <code>id</code>.</li>
+            <li><code>getElementsByTagName()</code>: Retorna un arreglo con todos los elementos que coinciden con una etiqueta específica.</li>
+            <li><code>getElementsByName()</code>: Recupera elementos que tienen un atributo <code>name</code> igual al especificado.</li>
+        </ul>
+
+        <h3>Modificación de elementos:</h3>
+        <ul>
+            <li><code>innerHTML</code>: Cambia el contenido HTML de un elemento.</li>
+            <li><code>setAttribute(atributo, valor)</code>: Modifica un atributo de un elemento.</li>
+            <li>Estilo y atributos: 
+                <pre>elemento.atributo = valor;
+elemento.style.propiedad = estilo;
+                </pre>
+            </li>
+        </ul>
+
+        <h3>Ejemplo práctico:</h3>
+        <pre>&lt;button onclick="cambiarTexto()"&gt;Púlsame&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function cambiarTexto() {
+    document.getElementById("demo").innerHTML = "Hola Mundo";
+}
+&lt;/script&gt;
+        </pre>
+        <button onclick="irAlInicio()">Volver al inicio</button>
+    </section>
+
+    <footer id="piePagina">
+        <p>© 2025 Información sobre el DOM.</p>
+        <p>Pagina informativa gracias a el libro Programación Páginas Web con Javascript y PHP de Mercedes Escarcena.</p>
+    </footer>
+
+    <script src="../js/funcion.js"></script>
+</body>
+</html>
